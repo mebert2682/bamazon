@@ -107,7 +107,7 @@ function buyItems() {
     // ask user what they would like tobuy and how much
     inquirer.prompt([
       {
-        name: "item_name",
+        name: "product_name",
         message: "What item would you like to purchase?",
         type: "list",
         choices: itemData
@@ -128,13 +128,13 @@ function buyItems() {
         }
       }
     ]).then(function(purchaseData) {
-      // purchaseData => {product_name: "Fruity Pebbles", buy_amount: 10.00}
+      // purchaseData => {item_name: "Fruity Pebbles", buy_amount: 10.00}
 
       // extract what item we're buying in using .find()
-      var purchasedItem = itemData.find(item => item.item_name === purchaseData.product_name)
+      var purchasedItem = itemData.find(item => item.product_name === purchaseData.product_name)
 
-      // console.log(purchaseData);
-      // console.log(purchasedItem);
+      console.log(purchaseData);
+      console.log(purchasedItem);
       
       
       // if selectedItem.stock_qty < user's buy amount, do nothing
